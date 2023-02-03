@@ -3,28 +3,22 @@ public class Cuenta {
     private String nombreDelTitular;
 
     private long numeroDeCuenta;
-    private int cantIngresar;
-    private int cantRetirar;
 
-    public Cuenta(String nombreDelTitular , double saldoDeCuenta ){
-
+    public Cuenta(String nombreDelTitular , double saldoDeCuenta , long numeroDeCuenta){
         this.nombreDelTitular = nombreDelTitular;
         this.saldoDeCuenta = saldoDeCuenta;
+        this.numeroDeCuenta = numeroDeCuenta;
     }
 
-    void setIngreso (int cantIngreso){
-        this.cantIngresar = cantIngreso;
+    void setSaldoDeCuenta (double cantIngreso){
+        this.saldoDeCuenta += cantIngreso;
+    }
+    void modificarSaldoDeCuenta (double cantIngreso){
+        this.saldoDeCuenta = this.saldoDeCuenta - cantIngreso;
     }
 
-    void setRetiro (int cantRetiro){
-        this.cantRetirar = cantRetiro;
-    }
-
-    double getSaldoCuenta (){
+    double getSaldoDeCuenta (){
        return  this.saldoDeCuenta;
     }
 
-    String getDatosCuenta (){
-      return  this.nombreDelTitular;
-    }
 }
